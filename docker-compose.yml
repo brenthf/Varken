@@ -10,7 +10,7 @@ services:
     networks:
       - internal
     volumes:
-      - /path/to/docker-influxdb/config-folder:/var/lib/influxdb
+      - /var/lib/docker/volumes/influxdb:/var/lib/influxdb
     restart: unless-stopped
   varken:
     hostname: varken
@@ -19,7 +19,7 @@ services:
     networks:
       - internal
     volumes:
-      - /path/to/docker-varken/config-folder:/config
+      - /var/lib/docker/volumes/varken:/config
     environment:
       - TZ=America/Chicago
       - VRKN_GLOBAL_SONARR_SERVER_IDS=1,2
@@ -127,7 +127,7 @@ services:
     ports:
       - 3000:3000
     volumes: 
-      - /path/to/docker-grafana/config-folder:/config
+      - /var/lib/docker/volumes/grafana:/config
     environment:
       - GF_PATHS_DATA=/config/data
       - GF_PATHS_LOGS=/config/logs
