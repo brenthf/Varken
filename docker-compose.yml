@@ -19,7 +19,7 @@ services:
     networks:
       - internal
     volumes:
-      - /var/lib/docker/volumes/varken:/app/data
+      - /var/lib/docker/volumes/varken:/config
     environment:
       - TZ=America/Chicago
       - VRKN_GLOBAL_SONARR_SERVER_IDS=1
